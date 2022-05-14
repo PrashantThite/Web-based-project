@@ -1,0 +1,26 @@
+#p1{
+    background-color:aqua;
+    font-size:40px;
+}
+
+div {
+    background-color: aqua;
+    font-size: 40px;
+    color: white;
+    margin: 30px 20px 10px 20px;
+    border: 5px dotted #F4D03F;
+    padding: 10px 10px 10px 10px
+}
+#p2 {
+    background-color: aqua;
+    font-size: 40px;
+}
+.center-alignment{
+    text-align:center;
+}
+#p3 {
+    background: red;
+    margin: 10px 0 10 0;
+    border: 3px dashed yellow;
+    padding: 10px 10px 10px 10px;
+}

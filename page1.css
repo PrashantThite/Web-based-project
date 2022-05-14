@@ -1,0 +1,22 @@
+nav{
+    background-color:gray;
+    height:50px;
+}
+#menu {
+    list-style-type: none;
+    display: inline-flex;
+    float: right;
+}
+#menu li{
+    margin-right:30px;
+}
+#menu li a{
+    text-decoration:none;
+}
+#banner{
+    margin-top:20px;
+    background-image:url('download.jpg');
+   height:250px;
+   width:100%;
+   background-position:center;
+    }
