@@ -1,0 +1,98 @@
+<html>
+<head>
+
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+
+    <p>Enter color:<input type="text" id="t1" /> </p>
+    <p>
+        <input type="button" value="Add to First" onclick="AddFirst()" />
+        <input type="button" value="Add to last" onclick="Addlast()" />
+        <input type="button" value="Remove to First" onclick="RemoveFirst()" />
+        <input type="button" value="Remove to last" onclick="RemoveLast()" />
+
+    </p>
+    <script>
+        var colors = ["Red", "Blue", "Yellow", "Green", "Black"];
+        var data = "";
+        colors.push("White"); // Add element to Last position
+        colors.unshift("pink");// Add element to First position
+        colors.pop(); // Remove element to Last position
+        colors.shift();// Remove element to First position
+
+
+        function display() {
+            data = "<ul>";
+            for (let i = 0; i < colors.length; i++) {
+                data += "<li>" + colors[i] + "</li>";
+            }
+            data += "</ul>";
+
+
+            document.getElementById("d1").innerHTML = data;
+        }
+        function AddFirst() {
+            colors.unshift(document.getElementById("t1").value);
+            display();
+        }
+
+        function Addlast() {
+
+            colors.push(document.getElementById("t1").value);
+            display();
+        }
+
+        function RemoveFirst() {
+            colors.shift();
+            display();
+        }
+
+        function RemoveLast() {
+
+            colors.pop();
+            display();
+        }
+
+        var sp = colors.splice(1, 1, "golden", "Silver");
+        var sl = colors.slice(0, 2);
+        var so = colors.sort();
+        console.log(so);
+
+        var Rv = colors.reverse();
+        console.log(Rv);
+
+
+
+        var num = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+        num.unshift(0);
+        console.log(num);
+
+        num.shift();
+        console.log(num);
+
+        num.push(100);
+        console.log(num);
+
+        num.pop();
+        console.log(num);
+
+        num.slice(0, 3);
+
+        num.splice(0, 3, 44, 55, 66);
+
+       var data1 = "<ul>";
+        for (let i = 0; i < num.length; i++) {
+            data1 += "<li>" + num[i] + "</li>";
+        }
+        data1 += "</ul>";
+
+
+        document.getElementById("d2").innerHTML = data1;
+
+
+
+    </script>
+</body>
+</html>

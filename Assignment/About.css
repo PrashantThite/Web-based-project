@@ -1,0 +1,42 @@
+
+
+
+#banner {
+    background-image: url('banner.jpg');
+    margin-top: 19px;
+    height: 154px;
+}
+.row div img{
+    margin-top: 20px;
+    margin-bottom:20px;
+    height: 349px;
+}
+.row div {
+    margin-top: 70px;
+    height: 349px;
+}
+.rowTitle{
+    font-size:45px;
+    font-family:Arial;
+    font-weight:bolder;
+        
+}
+.footer {
+    position: relative;
+    height: 200px;
+    background-color:coral;
+    margin-top: 31px;
+}
+    .footer p {
+        position: absolute;
+        top: 10px;
+        color: black;
+        left: 535px;
+        text-align: center;
+        font-weight: bolder;
+        text-decoration: underline;
+        font-size: 20px;
+    }
+    .footer p i{
+       margin-left:60px;
+    }

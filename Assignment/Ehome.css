@@ -1,0 +1,67 @@
+#nav{
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    
+}
+
+#welcome {
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    font-family: cursive;
+    color: chocolate;
+}
+
+#banner {
+    background-image: url('banner.jpg');
+    margin-top: 19px;
+    height: 154px;
+}
+marquee p {
+    font-size: 20px;
+    font-weight: bold;
+    color: chocolate;
+    
+}
+.col-md-3 p {
+    font-weight: bold;
+    margin: 30px 10px 25px 40px;
+    font-family: cursive;
+}
+.col-md-3 {
+    border: 2px solid Black;
+    padding: 10px 10px 10px 10px;
+    height: 1405px;
+    background-color: cornsilk;
+}
+
+.col-md-4{
+    text-align:center;
+    color:blue;
+}
+.col-md-4 img {
+    height: 210px;
+    margin: 15px 10px 20px 20px;
+}
+.footer {
+    position: relative;
+    height: 200px;
+    background-color: coral;
+    margin-top: 31px;
+}
+
+    .footer p {
+        position: absolute;
+        top: 10px;
+        color: black;
+        left: 535px;
+        text-align: center;
+        font-weight: bolder;
+        text-decoration: underline;
+        font-size: 20px;
+    }
+
+        .footer p i {
+            margin-left: 60px;
+        }

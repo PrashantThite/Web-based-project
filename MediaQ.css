@@ -1,0 +1,24 @@
+h3{
+    color:blue;
+    font-size:200px;
+    text-decoration:underline;
+}
+
+/*for Tab device*/
+
+@media only screen and (min-device-width:768px) and (max-device-width:1024px) {
+    h3 {
+        color: green;
+        font-size: 25px;
+    }
+}
+
+/*for mobile device*/
+@media only screen and (min-device-width:320px) and (max-device-width:480px) {
+
+    h3 {
+        color: red;
+        font-size: 14px;
+        text-decoration: none;
+    }
+}

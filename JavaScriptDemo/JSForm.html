@@ -1,0 +1,51 @@
+<html>
+<head>
+    <style>
+        ul li {
+            list-style-type: none;
+            display: inline-flex;
+            margin-left:10px;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Enter a number:<input type="text" id="n1" />: </p>
+    <p>Enter a number:<input type="text" id="n2" />: </p>
+    <p>Result:<input type="text" id="n3" />: </p>
+    <ul>
+        <li>  <input type="button" value="Addition" onclick="addition()" /></li>
+        <li>            <input type="button" value="Substraction" onclick="sub()" /></li>
+        <li>            <input type="button" value="Multipication" onclick="multi()" /></li>
+        <li> <input type="button" value="Division" onclick="Divi()" /></li>
+    </ul>
+
+    <script>
+        function addition()
+        {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            var c = parseInt(a) + parseInt(b);
+            document.getElementById("n3").value = c;
+        }
+        function sub() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            var c = parseInt(a) - parseInt(b);
+            document.getElementById("n3").value = c;
+        }
+        function multi() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            var c = parseInt(a) * parseInt(b);
+            document.getElementById("n3").value = c;
+        }
+        function Divi() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            var c = parseInt(a) / parseInt(b);
+            document.getElementById("n3").value = c;
+        }
+    </script>
+</body>
+</html>

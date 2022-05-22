@@ -1,7 +1,17 @@
-nav{
-    background-color:gray;
-    height:50px;
+nav {
+    background-color: lightgray;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
+#banner h1 {
+    position: absolute;
+    COLOR: WHITE;
+    margin-left: 493px;
+}
+
+
 #menu {
     list-style-type: none;
     display: inline-flex;
@@ -15,8 +25,61 @@ nav{
 }
 #banner{
     margin-top:20px;
-    background-image:url('download.jpg');
+    background-image:url('Banner.jpg');
    height:250px;
    width:100%;
    background-position:center;
     }
+.left-panel {
+    background-color: lightgray;
+    height: 600px;
+}
+    .left-panel ul {
+        list-style-type: none;
+    }
+        .left-panel ul li {
+            margin-top: 30px;
+            padding-top: 26px;
+        }
+.Main-content {
+    position: relative;
+    margin-top: -600px;
+    margin-left: 300px;
+    background-color: lightgray;
+    overflow-y: auto;
+}
+img {
+    margin-left: 138px;
+}
+.footer {
+    position: relative;
+    height: 67px;
+    background: #1B2631;
+    margin-top: -3px;
+}
+
+    .footer p {
+        position: absolute;
+        top: 10px;
+        color: white;
+        left: 10px;
+    }
+#TableHead {
+    color: darkslateblue;
+    font: caption;
+}
+#aboutUsHead {
+    position:relative;
+    font-size: 40px;
+    color: lightgray;
+    background-color:darkslateblue;
+    text-align:center;
+}
+.all {
+    background: lightgray;
+}
+.contact {
+    font-size: xx-large;
+    color: wheat;
+    background-color: #1B2631;
+}

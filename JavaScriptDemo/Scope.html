@@ -1,0 +1,31 @@
+<html>
+<head>
+
+</head>
+<body>
+
+    <script>
+        var a = 10;   // Global Scope
+        const pi = 3.14;     // Global Scope
+        
+        function test1() {
+            var a = 20;      //function scope
+            const pi = 4.14;  //function scope
+            console.log("In function" + a);
+            console.log("In function" + pi);
+        }
+        {
+            let a = 30;               //let can be declare only once.
+            console.log("let=" + a);
+
+        }
+        
+
+        test1();
+        console.log("Global " + a);
+        console.log("Global " + pi);
+
+    </script>
+
+</body>
+</html>
