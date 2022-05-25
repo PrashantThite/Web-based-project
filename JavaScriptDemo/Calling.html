@@ -1,0 +1,100 @@
+<html>
+<body>
+
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+
+    <script>
+        function display(data) {
+            document.getElementById("d1").innerHTML = data;
+
+        }
+        var promise = new Promise(function (resolve, reject) {
+            let x = 10;
+            if (x == 10) {
+                resolve("code get executed sucessfully");
+            }
+            else {
+                reject("Error in the code");
+            }
+        });
+        promise.then(function (value) {
+            display(value);
+        }, function (error) {
+            display(error);
+        });
+
+
+        var color = ["Red", "Blue", "Yellow", "Orange"];
+        function displayColor(data) {
+                var table = "<ul>";
+                for (let i = 0; i < data.length; i++) {
+                    table += "<li>" + data[i] + "</li>";
+                }
+                table += "</ul>";
+                document.getElementById("d2").innerHTML = table;         
+            
+        }
+        function errorcolor(data) {
+            document.getElementById("d2").innerHTML = data;
+
+        }
+
+     var promise1 = new Promise(function (resolve, reject) {
+            if (color != null) {
+                resolve(color);
+            }
+            else {
+                reject("Error found");
+            }
+
+        });
+        promise1.then(function (value) {
+            displayColor(value);
+        }).catch(function (error) {
+            errorcolor(error);
+        }
+
+        );
+      
+
+        
+        function displaysucess(data) {
+            let text = "<table border='2'><tr><th>user id</th><th>id</th><th>Title</th><th>completed</th></tr>";
+
+            for (let i = 0;i< data.length; i++) {
+                text += "<tr><td>" +data[i].userId+"</td><td>" + data[i].id + "</td><td>" + data[i].title + "</td><td>" + data[i].completed + "</td></tr>";
+            }
+            text += "</table>";
+                document.getElementById("d3").innerHTML = text;
+
+            }
+            function displayerror(data) {
+                document.getElementById("d4").innerHTML = data;
+
+            }
+            var promise2 = new Promise(function (resolve, reject) {
+                let r = new XMLHttpRequest();
+                r.open('Get', "https://jsonplaceholder.typicode.com/todos/");
+                r.onload = function() {
+                    if (r.status = 200) {
+                        resolve(r.response);
+                    }
+                    else {
+                        reject("Not able to load file")
+                    }
+                };
+                r.send();
+            });
+            promise2.then(function (value) {
+                displaysucess(value);
+            }).catch(function (error) {
+                displayerror(error);
+            });
+
+
+    </script>
+</body>
+</html>

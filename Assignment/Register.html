@@ -28,24 +28,20 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="Ehome.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="Contact.html">Contact us</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Sign in</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
+                        <a class="nav-link" href="LoginPage.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AboutUs.html">About us</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -58,39 +54,68 @@
 
     <section id="banner">
     </section>
+    <form action="LoginPage.html">
 
-    <div style="margin-left:400px">
-        <p>
-            <h3 style="color:darkcyan">Register here</h3>
-        </p>
-        <div class="mb-3" style=width:300px>
+        <div style="margin-left:400px">
+            <p>
+                <h3 style="color:darkcyan">Register here</h3>
+            </p>
+            <div class="mb-3" style=width:300px>
 
-            <label for="exampleFormControlInput4" class="form-label">Username</label>
-            <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Username">
+                <label for="exampleFormControlInput4" class="form-label">Username</label>
+                <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Username">
+            </div>
+            <div class="mb-3" style="width:300px">
+
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+
+            <div class="mb-3" style=width:300px>
+
+                <label for="exampleFormControlInput2" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="password">
+            </div>
+            <div class="mb-3" style=width:300px>
+
+                <label for="exampleFormControlInput3" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="exampleFormControlInput3" placeholder="password">
+            </div>
+            <p style="color:red" id="error"><small></small></p>
+            <p>
+                <button type="submit" class="btn btn-info" onclick="return validatePass()">Submit</button>      <button type="button" class="btn btn-secondary">Cancel</button>
+
+
+            </p>
+
+
         </div>
-        <div class="mb-3" style="width:300px">
+    </form>
 
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
+    <script>
+        function validatePass() {
+            var username = document.getElementById("exampleFormControlInput4").value;
 
-        <div class="mb-3" style=width:300px>
-
-            <label for="exampleFormControlInput2" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="password">
-        </div>
-        <div class="mb-3" style=width:300px>
-
-            <label for="exampleFormControlInput3" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="exampleFormControlInput3" placeholder="password">
-        </div>
-        <p>
-            <button type="button" class="btn btn-info">Submit</button>      <button type="button" class="btn btn-secondary">Cancel</button>
+            var email = document.getElementById("exampleFormControlInput1").value;
+            var pass = document.getElementById("exampleFormControlInput2").value;
+            var cpass = document.getElementById("exampleFormControlInput3").value;
+            if (pass == cpass) {
+                document.getElementById("error").innerHTML = " ";
+                localStorage.setItem("emailid", email);
+                localStorage.setItem("password", pass);
+                localStorage.setItem("username", username);
 
 
-        </p>
-    </div>
+                return true;
+            }
+            else {
+                document.getElementById("error").innerHTML = "Password does'nt match";
 
+                return false;
+            }
+
+        }
+    </script>
     <footer style="background-color: cadetblue; text-align: center; height: 33px">
         <b>© 2022 Upflowy Holdings Inc. All rights reserved</b>
     </footer>

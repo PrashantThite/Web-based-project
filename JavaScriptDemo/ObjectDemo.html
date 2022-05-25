@@ -1,0 +1,255 @@
+<html>
+<body>
+    <div id="d1"> </div>
+    <div id="d2"> </div>
+    <br />
+    <br />
+    <div id="d3"> </div>
+    <br />
+    <br />
+    <div id="d4"><br /></div>
+    <br />
+    <br />
+    <div id="d5"><br /></div>
+    <br />
+    <br />
+    <div id="d6"><br /></div>
+
+    <br />
+    <br />
+    <div id="d7"><br /></div>
+    <br />
+    <br />
+    <div id="d8"><br /></div>
+    <br />
+    <br />
+    <div id="d9"><br /></div>
+    <br />
+    <br />
+    <div id="d10"><br /></div>
+    <br />
+    <br />
+    <div id="d11"><br /></div>
+    <br />
+    <br />
+    <div id="d12"><br /></div>
+    <br />
+    <br />
+    <p>Msg will applay in 3 sec</p>
+    <div id="d13"><br /></div>
+    <br />
+    <br />
+    <div id="d14"><br /></div>
+    <br />
+    <br />
+    <div id="d15"><br /></div>
+
+    <script>
+        var emp = {};
+        emp.Id = 300;
+        emp.Name = "Sijit";
+
+        var employee = {
+            Id: 101,
+            Fname: "Ajay",
+            Lname: "Kadam"
+        }
+        console.log(employee.Fname);
+        document.getElementById("d1").innerHTML = JSON.stringify(employee);
+        var product = {
+            Id: 121,
+            name: "p1",
+            price: 1000,
+            DiscountAmount: function () {
+                return this.price * 0.10;
+
+            },
+            DiscountPrice: function () {
+                return this.price - this.DiscountAmount();
+
+            },
+            Display: function () {
+                return this.Id + " " + this.name + " " + this.price;
+            }
+        }
+        document.getElementById("d2").innerHTML = "Product details = " + product.Display() + "<br/>" + "Price after 10% discount= " + product.DiscountAmount();;
+        var student = {
+            RollNo: 101,
+            Name: "Sumit",
+            mathsMarks: 60,
+            ScienceMarks: 70,
+            EnglishMarks: 75,
+            hindiMarks: 60,
+            Histroymarks: 80,
+            StudentDisplay: function () {
+                return "Roll No=" + this.RollNo + " Name = " + this.Name;
+            },
+            TotalMarks: function () {
+                var total = this.mathsMarks + this.ScienceMarks + this.EnglishMarks + this.hindiMarks + this.Histroymarks;
+                return total;
+
+            },
+            Percentage: function () {
+                var per = this.TotalMarks() / 5;
+                return "Percentage = " + per;
+            }
+        }
+        document.getElementById("d3").innerHTML = "Student details : " + student.StudentDisplay() + "<br/>" + "Total marks=" + student.TotalMarks() + "<br/>" + student.Percentage();
+
+        var Square = {
+            Side: 12,
+            AreaSquare: function () {
+                var area = this.Side * this.Side;
+                return "Area of Square = " + area;
+            },
+            PeriSquare: function () {
+                var perimeter = this.Side * 4;
+                return "Perimeter of square = " + perimeter;
+            }
+        }
+        document.getElementById("d4").innerHTML = "Formulas of square" + "<br/>" + Square.AreaSquare() + "<br/>" + Square.PeriSquare();
+
+        var Rectangel = {
+            Length: 15,
+            Width: 20,
+            Height: 22,
+            Display: function () {
+                return "Length= " + this.Length + "    Width= " + this.Width + "  Height= " + this.Height;
+            },
+            AreaRectangle: function () {
+                var area = this.Length * this.Width;
+                return "Area of Rectangle = " + area;
+            },
+            VolumeRectangle: function () {
+                var volume = this.Length * this.Width * this.Height;
+                return "Volume of Rectangle = " + volume;
+            },
+            PeriRectangle: function () {
+                var perimeter = 2 * (this.Length * this.Width);
+                return "Perimeter of Rectangle = " + perimeter;
+            }
+        }
+        document.getElementById("d5").innerHTML = "Formulas of Rectangle <br/>" + Rectangel.Display() + "<br/>" + Rectangel.AreaRectangle() + "<br/>" + Rectangel.VolumeRectangle() + "<br/>" + Rectangel.PeriRectangle();
+
+        var Empl = {
+            FullName: function (City, Country) {
+                return this.firstname + " " + this.lastname + " " + City + " " + Country;
+            }
+        }
+
+        const member = {
+            firstname: "user",
+            lastname: "user1"
+        }
+        document.getElementById("d6").innerHTML = Empl.FullName.call(member, "Pune", "India");
+        document.getElementById("d7").innerHTML = Empl.FullName.apply(member, ["Mumbai", "India"]);
+        var empinfo = Empl.FullName.bind(member);
+        document.getElementById("d8").innerHTML = empinfo();
+
+        var Emp2 = [{
+            Firstname: " Amit",
+            Lastname: "Mohite",
+            Id: 101
+        }, {
+            Firstname: "Sujit",
+            Lastname: "Patil",
+            Id: 102
+        }, {
+            Firstname: "Sonali",
+            Lastname: "Sarde",
+            Id: 103
+        }, {
+            Firstname: "Ajay",
+            Lastname: "Bhujbal",
+            Id: 104
+        }
+        ]
+        var data = "<table border='2'><tr><th> First Name</th><th>Last Name </th><th>Id</th></tr>";
+        for (let i = 0; i < Emp2.length; i++) {
+            data += "<tr><td>" + Emp2[i].Firstname + "</td><td>" + Emp2[i].Lastname + "</td><td>" + Emp2[i].Id + "</td></tr>";
+        }
+        data += "</table>";
+        document.getElementById("d9").innerHTML = data;
+
+
+        var product = [
+            {
+                Id: 101,
+                Name: "mobile",
+                Price: 20000
+            },
+            {
+                Id: 102,
+                Name: "Laptop",
+                Price: 55000
+            }, {
+                Id: 103,
+                Name: "TV",
+                Price: 40000
+            }
+        ]
+        var data1 = "<table border='2'><tr><th> ID</th><th>Product </th><th>Price</th></tr>";
+        for (let i = 0; i < product.length; i++) {
+            data1 += "<tr><td>" + product[i].Id + "</td><td>" + product[i].Name + "</td><td>" + product[i].Price + "</td></tr>";
+        }
+        data1 += "</table>";
+        document.getElementById("d10").innerHTML = data1;
+
+        var Student = [
+            {
+                RollNo1: 10,
+                Name1: "Saurabh",
+                Percent: 70
+            },
+            {
+                RollNo1: 20,
+                Name1: "Aniket",
+                Percent: 75
+            },
+            {
+                RollNo1: 30,
+                Name1: "Mayur",
+                Percent: 80
+            }
+        ]
+        var data2 = "<table border='2'><tr><th> Roll No</th><th>Student</th><th>Percentage</th></tr>";
+        for (let i = 0; i < Student.length; i++) {
+            data2 += "<tr><td>" + Student[i].RollNo1 + "</td><td>" + Student[i].Name1 + "</td><td>" + Student[i].Percent + "</td></tr>";
+        }
+        data2 += "</table>";
+        document.getElementById("d11").innerHTML = data2;
+
+        // Callback functions
+        function add(a, b, callback) {
+            let sum = a + b;
+            callback(sum);
+        }
+        function display2(sum) {
+            document.getElementById("d12").innerHTML = "addition is equal to" + sum;
+        }
+        add(10, 20, display2);
+
+        // SetTime
+        function Display3() {
+            document.getElementById("d13").innerHTML = "Good morning everyone";
+
+        }
+        setTimeout(Display3, 3000);
+
+        // SetInterval
+        function showtime() {
+            let d = new Date();
+            let time = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+            document.getElementById("d14").innerHTML = time;
+        }
+        setInterval(showtime, 1000);
+
+        function Display4() {
+            document.getElementById("d15").innerHTML = "Hello friends";
+
+        }
+        setTimeout(Display4, 3000);
+    </script>
+
+</body>
+</html>
