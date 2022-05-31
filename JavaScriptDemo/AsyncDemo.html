@@ -1,0 +1,54 @@
+<html>
+
+<body>
+    <input type="button" value="get data" onclick="getdata()" />
+
+    <div id="d1"></div>
+    <div id="d2"></div>
+
+    <script>
+
+        function displaysucess(data) {
+            let text = "<table border='2'><tr><th>user id</th><th>id</th><th>Title</th><th>completed</th></tr> ";
+
+            let info = JSON.parse(data);
+            for (let i = 0; i < info.length; i++) {
+                text += "<tr><td>" + info[i].userId + "</td><td>" + info[i].id + "</td><td>" + info[i].title + "</td><td>" + info[i].completed + "</td></tr> ";
+
+            }
+            text += " </table > ";
+
+            document.getElementById("d1").innerHTML = text;
+
+        }
+        function displayerror(data) {
+            document.getElementById("d2").innerHTML = data;
+
+        }
+        async function getdata() {
+            try {
+                var promise2 = new Promise(function (resolve, reject) {
+                    let r = new XMLHttpRequest();
+                    r.open('Get', "https://jsonplaceholder.typicode.com/todos/");
+                    r.onload = function () {
+                        if (r.status = 200) {
+                            resolve(r.response);
+                        }
+
+                    };
+                    r.send();
+
+                });
+                var response = await promise2;
+
+                displaysucess(response);
+
+            }
+            catch(error) {
+                console.log(error);
+            }
+            
+        }
+    </script>
+</body>
+</html>

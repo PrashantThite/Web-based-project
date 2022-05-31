@@ -63,9 +63,9 @@
         
         function displaysucess(data) {
             let text = "<table border='2'><tr><th>user id</th><th>id</th><th>Title</th><th>completed</th></tr>";
-
-            for (let i = 0;i< data.length; i++) {
-                text += "<tr><td>" +data[i].userId+"</td><td>" + data[i].id + "</td><td>" + data[i].title + "</td><td>" + data[i].completed + "</td></tr>";
+            let info = JSON.parse(data);
+            for (let i = 0;i< info.length; i++) {
+                text += "<tr><td>" +info[i].userId+"</td><td>" + info[i].id + "</td><td>" + info[i].title + "</td><td>" + info[i].completed + "</td></tr>";
             }
             text += "</table>";
                 document.getElementById("d3").innerHTML = text;

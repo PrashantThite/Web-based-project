@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title> Bubbling & capturing in javascript</title>
+</head>
+<body>
+    <div id="Parent">
+        <button type="button">Parent</button>
+        <div id="Child">
+            <button type="button">child</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("Parent").addEventListener("click", function () {
+            alert("inside the parent");
+        }, false);
+
+        document.getElementById("Child").addEventListener("click", function () {
+            alert("inside the child");
+
+        }, true);
+    </script>
+</body>
+</html>
